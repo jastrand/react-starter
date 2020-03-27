@@ -5,10 +5,10 @@ export const App = () => {
   return (
     <div>
       <Card
-        title="Hello"
-        emoji="🍓"
-        desc="This is my card"
-        cta="Click me" />
+        title="Lemon"
+        emoji="🍋"
+        desc="This is a really tasty fruit"
+        cta="Order now" />
     </div>
   )
 }
