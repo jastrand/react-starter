@@ -1,0 +1,50 @@
+.card-open {
+  width: 371px;
+  height: 372px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h3 {
+  margin: 0;
+  padding-top: 30px;
+}
+
+.flip-title {
+  position: relative;
+  width: 371px;
+  height: 186px;
+  text-align: center;
+  background: #8CFFBA;
+  border-radius: 8px 8px 0px 0px;
+  font-family: 'Roboto';
+  font-size: 70px;
+  line-height: 82px;
+  color: #166F39;
+  transition: transform .5s;
+}
+
+.flip-title:hover {
+  height: 380px;
+  position: relative;
+}
+
+.flip-emoji {
+  position: relative;
+  width: 371px;
+  height: 186px;
+  background: #CFFFE2;
+  border-radius: 0px 0px 8px 8px;
+  font-size: 90px;
+  text-align: center;
+  transition: transform .5s;
+}
+
+.flip-emoji:hover {
+  height: 380px;
+  position: relative;
+}

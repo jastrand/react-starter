@@ -27,8 +27,8 @@ export const Card = ({ title, emoji, desc, cta }) => {
           </container>
         </article>
       ) : (<CardOpen
-        title="Lemon"
-        emoji="🍋" />)}
+        flipTitle="Lemon"
+        flipEmoji="🍋" />)}
     </div>
   )
 }
