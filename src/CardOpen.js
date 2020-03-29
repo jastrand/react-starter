@@ -1,11 +1,11 @@
 import React from 'react'
 import './card-open.css'
 
-export const CardOpen = ({ flipEmoji, flipTitle }) => {
+export const CardOpen = ({ topClr, bottomClr, flipTitle, flipEmoji, txtClr }) => {
   return (
-    <article className="card-open">
-      <h3 className="flip-title">{flipTitle}</h3>
-      <h3 className="flip-emoji">{flipEmoji}</h3>
-    </article>
+    <div>
+      <section className="top" style={{ backgroundColor: topClr, color: txtClr }}>{flipTitle}</section>
+      <section className="bottom" style={{ backgroundColor: bottomClr }}>{flipEmoji}</section>
+    </div>
   )
 }

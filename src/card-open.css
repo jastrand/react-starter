@@ -1,50 +1,44 @@
-.card-open {
-  width: 371px;
-  height: 372px;
-  border-radius: 8px;
-  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.25);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-h3 {
-  margin: 0;
-  padding-top: 30px;
-}
-
-.flip-title {
+div {
+  width: 370px;
+  height: 370px;
   position: relative;
-  width: 371px;
-  height: 186px;
-  text-align: center;
-  background: #8CFFBA;
-  border-radius: 8px 8px 0px 0px;
+}
+
+section {
+  position: absolute;
+  height: 185px;
+  width: 100%; 
+  overflow: hidden;
+  transition: all 1s ease;
+}
+
+.top {
   font-family: 'Roboto';
   font-size: 70px;
-  line-height: 82px;
-  color: #166F39;
-  transition: transform .5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
 }
 
-.flip-title:hover {
-  height: 380px;
-  position: relative;
+.bottom {
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 70px;
 }
 
-.flip-emoji {
-  position: relative;
-  width: 371px;
-  height: 186px;
-  background: #CFFFE2;
-  border-radius: 0px 0px 8px 8px;
-  font-size: 90px;
-  text-align: center;
-  transition: transform .5s;
+.bottom:hover {
+  height: 370px;
 }
 
-.flip-emoji:hover {
-  height: 380px;
-  position: relative;
+.top:hover {
+  height: 370px;
+  z-index: 1;
+}
+
+.top:hover + .bottom{
+  height: 0;
+  z-index: 0;
 }
