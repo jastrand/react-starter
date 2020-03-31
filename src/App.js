@@ -1,37 +1,48 @@
-import React from 'react'
-import { Card } from './Card'
-import './index.css'
+import React from "react";
+import { Card } from "./Card";
 
-export const App = () => {
-  return (
-    <div className="print-cards">
-      <Card
-        title="Lemon"
-        emoji="🍋"
-        desc="This is a really tasty fruit"
-        cta="Order now"
-        primaryClr="#8CFFBA"
-        titleClr="#166F39"
-        secondClr="#CFFFE2"
-        btnClr="#FCED84" />
-      <Card
-        title="Rocket"
-        emoji="🚀"
-        desc="Join us into the outer space"
-        cta="Book now"
-        primaryClr="#A6CFE2"
-        titleClr="#0B0C11"
-        secondClr="#C2DCE9"
-        btnClr="#000" />
-      <Card
-        title="Lemon"
-        emoji="🍋"
-        desc="This is a really tasty fruit"
-        cta="Order now"
-        primaryClr="#8CFFBA"
-        titleClr="#166F39"
-        secondClr="#CFFFE2"
-        btnClr="#FCED84" />
-    </div>
-  )
-}
+// based on this assignment
+// https://www.figma.com/file/WQlcE8c17JEZ1mgMEBw71i/Card-Component-Lab?node-id=0%3A1
+
+// The card component can look differently based on what colors, texts and emoji you specify as props.
+
+export const App = () => (
+  <main>
+    <Card
+      buttonText="ORDER NOW"
+      buttonTextColor="#000000"
+      buttonColor="#FCED84"
+      emoji="🍋"
+      primary="#8CFFBA"
+      secondary="#CFFFE2"
+      subtitle="This is a really tasty fruit."
+      subtitleColor="#000000"
+      title="Lemon"
+      titleColor="#166F39"
+    />
+    <Card
+      buttonText="I LIKE IT"
+      buttonTextColor="#fff"
+      buttonColor="#006cff"
+      emoji="💙"
+      primary="pink"
+      secondary="#f1ced3"
+      subtitle="Monday - What a lovely day!"
+      subtitleColor="#fff"
+      title="Today"
+      titleColor="#006cff"
+    />
+    <Card
+      buttonText="ADOPT ME"
+      buttonTextColor="#502F7E"
+      buttonColor="#fff"
+      emoji="🐶"
+      primary="#EEB200"
+      secondary="#FFE086"
+      subtitle="Hello, wanna be friends?"
+      subtitleColor="#502F7E"
+      title="Doggy"
+      titleColor="#502F7E"
+    />
+  </main>
+);

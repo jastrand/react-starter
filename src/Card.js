@@ -1,38 +1,55 @@
-import React, { useState } from 'react'
-import './card.css'
-import { CardOpen } from './CardOpen'
+import React, { useState } from "react";
+import "./card.css";
 
-export const Card = ({ title, emoji, desc, cta, primaryClr, titleClr, secondClr, btnClr }) => {
-  const [click, setClick] = useState(false);
+// Passing in and destructuring the props
+export const Card = ({
+  buttonColor,
+  buttonText,
+  buttonTextColor,
+  emoji,
+  primary,
+  secondary,
+  subtitle,
+  subtitleColor,
+  title,
+  titleColor
+}) => {
+  // this state variable takes care of what "version" of the card to render
+  const [clicked, setClicked] = useState(false);
 
-  const handleClick = (event) => {
-    event.preventDefault();
-    setClick(true);
-  }
+  // If the card is clicked, render this:
+  if (clicked)
+    return (
+      <article className="card clicked-card">
+        <section className="top" style={{ background: primary }}>
+          <h1 style={{ color: titleColor }}>{title}</h1>
+        </section>
+        <section className="bottom" style={{ background: secondary }}>
+          <span className="emoji" role="img" aria-label="emoji">
+            {emoji}
+          </span>
+        </section>
+      </article>
+    );
 
+  // If the card isn't cliked, render this:
   return (
-    <div>
-      {!click ? (
-        <article className="card" style={{ backgroundColor: primaryClr }}>
-          <h3 className="card-title" style={{ color: titleClr }}>{title} {emoji}</h3>
-          <container style={{ backgroundColor: secondClr }}>
-            <p>{desc}</p>
-            <button
-              type="submit"
-              className="call-to-action"
-              onClick={handleClick}
-              onChange={(event) => setClick(event.target.value)}
-              style={{ background: btnClr }}>
-              {cta}
-            </button>
-          </container>
-        </article>
-      ) : (<CardOpen
-        flipTitle="Lemon"
-        flipEmoji="🍋"
-        topClr="#8CFFBA"
-        bottomClr="#CFFFE2"
-        txtClr="#166F39" />)}
-    </div>
-  )
-}
+    <article className="card">
+      <section className="top" style={{ background: primary }}>
+        <h1 style={{ color: titleColor }}>{title}</h1>
+        <span className="emoji" role="img" aria-label="emoji">
+          {emoji}
+        </span>
+      </section>
+      <section className="bottom" style={{ background: secondary }}>
+        <h2 style={{ color: subtitleColor }}>{subtitle}</h2>
+        <button
+          style={{ background: buttonColor, color: buttonTextColor }}
+          onClick={() => setClicked(!clicked)}
+        >
+          {buttonText}
+        </button>
+      </section>
+    </article>
+  );
+};
